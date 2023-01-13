@@ -12,8 +12,8 @@ RUN echo "apt-get -y install git curl autoconf bison build-essential libssl-dev 
 RUN apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 RUN echo "ENV RBENV_ROOT /usr/local/src/rbenv"
 ENV RBENV_ROOT /usr/local/src/rbenv
-RUN echo "ENV RUBY_VERSION 3.1.2"
-ENV RUBY_VERSION 3.1.2
+RUN echo "ENV RUBY_VERSION 2.5.0"
+ENV RUBY_VERSION 2.5.0
 RUN echo "ENV PATH ${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH"
 ENV PATH ${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH
 
