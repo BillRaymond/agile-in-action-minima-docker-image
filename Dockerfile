@@ -1,4 +1,4 @@
-FROM --platform=arm64 ubuntu:22.04
+FROM ubuntu:22.04
 
 RUN echo "#################################################"
 RUN echo "Get the latest APT packages"
