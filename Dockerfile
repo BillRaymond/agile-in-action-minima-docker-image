@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM --platform=arm64 ubuntu:22.04
 
 RUN echo "#################################################"
 RUN echo "Get the latest APT packages"
@@ -9,11 +9,11 @@ RUN echo "#################################################"
 RUN echo "Install Jekyll pre-requisites"
 RUN echo "Partially based on https://gist.github.com/jhonnymoreira/777555ea809fd2f7c2ddf71540090526"
 RUN echo "apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev"
-RUN apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+RUN apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev apt-utils
 RUN echo "ENV RBENV_ROOT /usr/local/src/rbenv"
 ENV RBENV_ROOT /usr/local/src/rbenv
-RUN echo "ENV RUBY_VERSION 2.5.0"
-ENV RUBY_VERSION 2.5.0
+RUN echo "ENV RUBY_VERSION 3.1.2"
+ENV RUBY_VERSION 3.1.2
 RUN echo "ENV PATH ${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH"
 ENV PATH ${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:$PATH
 
