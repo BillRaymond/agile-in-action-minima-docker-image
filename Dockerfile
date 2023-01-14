@@ -8,8 +8,23 @@ RUN apt-get update
 RUN echo "#################################################"
 RUN echo "Install Jekyll pre-requisites"
 RUN echo "Partially based on https://gist.github.com/jhonnymoreira/777555ea809fd2f7c2ddf71540090526"
-RUN echo "apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev"
-RUN apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev apt-utils
+RUN echo "apt-get -y install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev apt-utils"
+RUN apt-get -y install \
+    git \
+    curl \
+    autoconf \
+    bison \
+    build-essential \
+    libssl-dev \
+    libyaml-dev \
+    libreadline6-dev \
+    zlib1g-dev \
+    libncurses5-dev \
+    libffi-dev \
+    libgdbm6 \
+    libgdbm-dev \
+    libdb-dev \
+    apt-utils
 RUN echo "ENV RBENV_ROOT /usr/local/src/rbenv"
 ENV RBENV_ROOT /usr/local/src/rbenv
 RUN echo "ENV RUBY_VERSION 3.1.2"
