@@ -105,5 +105,7 @@ wkhtmltopdf \
 ffmpeg
 
 RUN echo "#################################################"
-RUN echo "Clear APT cache"
-RUN rm -rf /var/lib/apt/lists/*
+RUN echo "Clear caches to save space"
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    find / -type d -name __pycache__ -prune -exec rm -rf {} \;
