@@ -1,6 +1,13 @@
 FROM ubuntu:22.04
 
 RUN echo "#################################################"
+RUN echo "This Docker container includes everything for:"
+RUN echo "Building the Agile in Action website"
+RUN echo "Running scripts in support of building the site"
+RUN echo "Running scripts in support of building GPT content"
+
+
+RUN echo "#################################################"
 RUN echo "Update APT packages"
 RUN apt-get update
 
@@ -61,8 +68,11 @@ RUN echo "#################################################"
 
 RUN echo "#################################################"
 RUN echo "Prevent timezone Python prompt"
-ENV TZ=US/Pacific \
+ENV TZ=America/Los_Angeles \
 DEBIAN_FRONTEND=noninteractive
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 RUN echo "#################################################"
 RUN echo "Install Python pre-requisites"
